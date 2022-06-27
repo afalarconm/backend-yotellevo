@@ -16,11 +16,13 @@ const config = {
         dialect: 'postgres',
     },
     production: {
-        username: process.env.DB_USERNAME,
-        password: process.env.DB_PASSWORD,
-        database: process.env.DB_DATABASE || 'database_production',
-        host: process.env.DB_HOST || 'localhost',
+        use_env_variable: 'DATABASE_URL',
         dialect: 'postgres',
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false,
+            }
     }
 }
 
