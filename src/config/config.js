@@ -23,8 +23,10 @@ const config = {
                 require: true,
                 rejectUnauthorized: false,
             }
+
     }
 }
+};
 
 module.exports = config;
 
