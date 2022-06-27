@@ -28,12 +28,12 @@ const config = {
 }
 };
 
-Object.keys(config).forEach(configkey) => {
+Object.keys(config).forEach((configkey) => {
     const configValue = config[configkey];
     if (configValue.extend) {
         config[configkey] = { ...config[configValue.extend], ...configValue };
     }
-};
+});
 
 module.exports = config;
 
