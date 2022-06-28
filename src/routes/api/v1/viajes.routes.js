@@ -10,7 +10,7 @@ const { list } = require("postcss");
 
 router.post("/CreateViaje/", async (req, res) => {
     try {   
-      console.log(req.body) 
+ 
       if (validateAddViajeInput(req.body)){
         const viaje = await Viaje.create({
           origen: req.body.origen,
@@ -98,7 +98,6 @@ router.delete('/viajes/:id', (req, res) => {
 
 // añadir pasajeros al viaje
 router.put('/viajes/join/:id', (req, res) => {
-  console.log(req.body)
   try {
     let viajeId = req.params.id
     let nuevo_viaje = req.body

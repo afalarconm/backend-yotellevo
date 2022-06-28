@@ -16,24 +16,13 @@ const config = {
         dialect: 'postgres',
     },
     production: {
-        use_env_variable: 'DATABASE_URL',
+        username: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_DATABASE || 'database_production',
+        host: process.env.DB_HOST || 'localhost',
         dialect: 'postgres',
-        dialectOptions: {
-            ssl: {
-                require: true,
-                rejectUnauthorized: false,
-            }
-
     }
 }
-};
-
-Object.keys(config).forEach((configkey) => {
-    const configValue = config[configkey];
-    if (configValue.extend) {
-        config[configkey] = { ...config[configValue.extend], ...configValue };
-    }
-});
 
 module.exports = config;
 

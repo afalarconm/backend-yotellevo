@@ -13,6 +13,8 @@ const notFound = require('./middlewares/errors/notFound.js');
 const createAdmin = require('./utils/admin.js');
 
 app.use(cors());
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

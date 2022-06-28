@@ -21,6 +21,11 @@ module.exports = (sequelize, DataTypes) => {
         as: 'reviews',
       }
       );
+
+      Viaje.hasMany(models.Message, {
+        as: 'message',
+      }
+      );
       }
   
     }

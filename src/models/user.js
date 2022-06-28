@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+   
+
       User.hasMany(models.Viaje, {
         as: 'viajes',
       }
@@ -18,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
 
       User.hasMany(models.Review, {
         as: 'reviews',
+      }
+      );
+      User.hasMany(models.Message, {
+        as: 'message',
       }
       );
 

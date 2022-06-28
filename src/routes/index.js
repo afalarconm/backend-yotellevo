@@ -6,6 +6,7 @@ const viajes = require('./api/v1/viajes.routes');
 const auth = require('./api/v1/auth.routes');
 const users = require('./api/v1/users.routes');
 const review = require('./api/v1/review.routes');
+const message = require('./api/v1/message.routes');
 
 
 const authorization = require('../middlewares/auth');
@@ -18,6 +19,7 @@ router.use('/users', authorization, users);
 
 router.use('/review', authorization, review);
 
+router.use('/message', message);
 
 router.use('/viajes', viajes);
 router.get('/viajes', viajes);
@@ -29,6 +31,7 @@ router.put('/viajes/join/:id', authorization, viajes)
 router.delete('/viajes/:id', authorization, viajes);
 
 router.use('/CreateViaje', authorization, viajes);
+
 router.post('/CreateViaje', viajes);
 router.get('/CreateViaje', authorization, viajes);
 
